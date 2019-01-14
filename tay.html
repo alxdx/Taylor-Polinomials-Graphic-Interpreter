@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Series de Taylor</title>
+	<meta charset="utf-8" />
+  	<script src="d3.min.js"></script>
+  	<script src="function-plot.js"></script>
+  	<script src="funcion.js"></script>
+  	<style type="text/css">
+  	#title{
+  	 	text-align: center;
+  	 }	
+  	 .layer{
+	  width: 70%;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+  	section {
+	  border:3px solid grey;
+	  border-radius:10px;
+	  box-shadow: 3px 3px 3px grey;
+	  float:left;
+	  height:360px;
+	  padding: 20px;
+	  margin:15px;
+	}
+	#opciones{
+		height: 340px;
+	}
+  	</style>
+</head>
+<body>
+<h2 id="title">Graficador Series de Taylor</h2>
+<h3 id="title">Elaborado por: Fernando Alexis Domínguez Contreras</h3>
+<div class="layer">
+	<section>
+	 	<div id="myFunction"></div>
+	</section>
+	<section id ="opciones" >
+		<label for="funcOptions">selecciona una funcion</label><br>
+		<select onchange="color()" id="funcOptions">
+	 		<option value="sen"> Sen(x) </option>
+	  		<option value="cos"> Cos(x) </option>
+	  		<option value="ln"> ln(x) </option>
+	  		<option value="e"> e(x) </option>
+		</select> <br>
+		<p></p>
+		<label for="orig">Funcion original</label> <input type="checkbox" name="orig" id="orig" onchange="color()"><br>
+		<p></p>
+		<label for="pol1">Polinomio Grado 1</label> <input type="checkbox" id="pol1" name="pol1" onchange="color()"><br>
+		<p></p>
+		<label for="pol2">Polinomio Grado 2</label> <input type="checkbox" id="pol2" name="pol2" onchange="color()"><br>
+		<p></p>
+		<label for="pol3">Polinomio Grado 3</label> <input type="checkbox" id="pol3" name="pol3" onchange="color()"><br>
+		<p></p>
+		<label for="pol4">Polinomio Grado 4</label> <input type="checkbox" id="pol4" name="pol4" onchange="color()"><br>
+		<p></p>
+		<label for="pol5">Polinomio Grado 5</label> <input type="checkbox" id="pol5" name="pol5" onchange="color()"><br>
+		<p></p>
+		<label for="pol6">otro Grado</label> <input type="checkbox" id="pol6" name="pol6" onchange="color()"><br>
+		<p></p>
+		<label for="polN">Ingrese otro grado</label> <br> <input type="number" id="polN" name="polN" onchange="color()"><br>
+		<br>
+		<p>NOTA para e(x): <br> el grado mostrado en <br> la opcion 'otro grado' es n-1</p>
+	 </section>
+	 <script src="funcion.js"></script>
+
+</div> 
+
+
+
+</body>
+</html>

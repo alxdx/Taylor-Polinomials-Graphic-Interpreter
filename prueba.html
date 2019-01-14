@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> prueba Polinomios</title>
+</head>
+<body>
+
+
+<button onclick="of()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+
+function of(){
+	var sen="g",cose="",lnx="";
+	sen=sin(20);
+  cose=fcos(8);
+  lnx=ln(150);
+  document.getElementById("demo").innerHTML = lnx;
+}
+
+
+
+function sin(grade){
+  if(grade%2===0)
+    grade++;
+  console.log("grade: "+grade);
+  const seg1="-(x^",seg2="+(x^",seg3=")/",seg4="!";
+  var cadena="x";
+  var signo=-1;
+  for(var i=3; i<=grade; i+=2){
+    if(signo===-1)
+      res=cadena.concat(seg1);
+    else
+      res=cadena.concat(seg2);
+
+    var na=i.toString();
+    cadena=res.concat(na,seg3,na,seg4);
+    signo= -signo;
+  }
+  res= cadena;
+  return res;
+}
+
+function fcos(grade){
+  if(grade%2!=0)
+    grade++;
+  console.log("grade: "+grade);
+  const seg1="-(x^",seg2="+(x^",seg3=")/",seg4="!";
+  var cadena="x";
+  var signo=-1;
+  for(var i=2; i<=grade; i+=2){
+    if(signo===-1)
+      res=cadena.concat(seg1);
+    else
+      res=cadena.concat(seg2);
+
+    var na=i.toString();
+    cadena=res.concat(na,seg3,na,seg4);
+    signo= -signo;
+  }
+  res= cadena;
+  return res;
+}
+
+function ln(grade){
+
+  console.log("grade: "+grade);
+  const seg1="-(x-1)^",seg2="+(x-1)^",seg3="/";
+  var cadena="(x-1)";
+  var signo=-1;
+  for(var i=2; i<=grade; i++){
+    if(signo===-1)
+      res=cadena.concat(seg1);
+    else
+      res=cadena.concat(seg2);
+
+    var na=i.toString();
+    cadena=res.concat(na,seg3,na);
+    signo= -signo;
+  }
+  res= cadena;
+  return res;
+}
+
+  
+
+</script>
+
+</body>
+
+</html>
